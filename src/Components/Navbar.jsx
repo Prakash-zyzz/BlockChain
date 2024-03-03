@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
-import {AiOutlineMenu,AiOutlineClose} from "react-icons/ai"
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
 
 const Navbar = () => {
 
-     const[nav,setNav] = useState(false)
+     const [nav, setNav] = useState(false)
 
      const handleNav = () => {
         setNav(!nav)
      }
-
 
   return (
     <div className='w-full h-[90px] bg-black'>
@@ -27,11 +26,8 @@ const Navbar = () => {
         </div>
         <div onClick={handleNav} className='block md:hidden'>
             {nav ? <AiOutlineClose size={30} className="text-white" /> : <AiOutlineMenu size={30} className="text-white" />}
-            
-            
         </div>
-
-        <div className={nav ? 'w-full bg-black text-white absolute top-[90px] left-0 flex justify-center text-center' : 'absolute left-[100%]'}>
+        <div className={nav ? 'w-full bg-black text-white absolute top-[90px] left-0 flex justify-center text-center' : 'hidden md:hidden'}>
             <ul >
                 <li className='text-2xl'>Platforms</li>
                 <li className='text-2xl'>Developers</li>
@@ -45,4 +41,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
